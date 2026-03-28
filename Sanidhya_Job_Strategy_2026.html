@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanidhya Kalta — 2026 Job Hunt Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Newsreader:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e0e;
+    --paper: #f5f1eb;
+    --accent: #c8402a;
+    --accent2: #2a6cc8;
+    --muted: #7a7469;
+    --rule: #c9c3bb;
+    --tag-bg: #e8e2d9;
+    --card: #ffffff;
+    --mono: 'DM Mono', monospace;
+    --display: 'Syne', sans-serif;
+    --body: 'Newsreader', Georgia, serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 3px solid var(--ink);
+    padding: 2.5rem 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: 'PLACEMENT PLAYBOOK';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: var(--display);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    color: var(--rule);
+    transform-origin: center;
+  }
+  .header-meta {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  header h1 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  header h1 span { color: var(--accent); }
+  .header-sub {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    max-width: 55ch;
+  }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 1.5px solid var(--rule);
+    overflow-x: auto;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.85rem 1.5rem;
+    border-right: 1px solid var(--rule);
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  nav a:hover { background: var(--ink); color: var(--paper); }
+
+  /* ── LAYOUT ── */
+  main { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; }
+  section { margin-top: 4rem; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-top: 2px solid var(--accent);
+    padding-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+  h2 {
+    font-family: var(--display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+  .section-intro {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    max-width: 65ch;
+  }
+
+  /* ── RESUME BRIEF ── */
+  .resume-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    border: 1px solid var(--rule);
+    background: var(--rule);
+    margin-bottom: 2.5rem;
+  }
+  .resume-cell {
+    background: var(--paper);
+    padding: 1.25rem 1.5rem;
+  }
+  .resume-cell .label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+  .resume-cell .value {
+    font-family: var(--display);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    margin: 0.15rem 0.1rem;
+    letter-spacing: 0.03em;
+  }
+  .tag.hot { background: var(--accent); color: white; }
+
+  /* ── COMPANY TABLE ── */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  thead tr {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  thead th {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.9rem 1rem;
+    text-align: left;
+    font-weight: 400;
+  }
+  tbody tr {
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.1s;
+  }
+  tbody tr:hover { background: #ede8e0; }
+  td {
+    padding: 0.85rem 1rem;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  td:first-child { font-family: var(--display); font-weight: 600; font-size: 0.9rem; }
+  .tier {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .tier-s { background: #2a6cc820; color: var(--accent2); border: 1px solid var(--accent2); }
+  .tier-m { background: #c8402a15; color: var(--accent); border: 1px solid var(--accent); }
+  .tier-t { background: #0e0e0e15; color: var(--ink); border: 1px solid var(--muted); }
+  .pill {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--tag-bg);
+    margin: 0.1rem;
+  }
+  a.apply-link {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent2);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent2);
+    transition: opacity 0.15s;
+  }
+  a.apply-link:hover { opacity: 0.6; }
+  .outreach-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── EMAIL TEMPLATES ── */
+  .email-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .email-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .email-type-badge {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    flex-shrink: 0;
+  }
+  .email-header-title {
+    font-family: var(--display);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .email-body {
+    padding: 1.5rem;
+    font-family: var(--body);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  .email-field {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.5rem 1.5rem;
+    border-bottom: 1px solid var(--rule);
+    background: #faf8f5;
+    font-size: 0.82rem;
+  }
+  .email-field-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    min-width: 70px;
+    padding-top: 0.05rem;
+    flex-shrink: 0;
+  }
+  .email-field-value { color: var(--ink); }
+  .highlight { background: #c8402a18; padding: 0 0.2em; border-radius: 2px; }
+  .copy-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--muted);
+    padding: 0.35rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .copy-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  /* ── STRATEGY ── */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .strategy-card {
+    border: 1px solid var(--rule);
+    background: var(--card);
+    padding: 1.5rem;
+  }
+  .strategy-card-num {
+    font-family: var(--display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--rule);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .strategy-card h3 {
+    font-family: var(--display);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+  }
+  .strategy-card ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  .strategy-card ul li {
+    font-size: 0.87rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .strategy-card ul li:last-child { border-bottom: none; }
+  .li-icon { color: var(--accent); flex-shrink: 0; margin-top: 0.15rem; }
+
+  /* ── TIMELINE ── */
+  .timeline { margin-top: 2rem; }
+  .tl-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .tl-day {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: right;
+    color: var(--muted);
+    padding-top: 0.2rem;
+  }
+  .tl-content {
+    border-left: 2px solid var(--rule);
+    padding-left: 1.25rem;
+    font-size: 0.87rem;
+  }
+  .tl-content b { font-family: var(--display); font-size: 0.9rem; }
+
+  /* ── DO / DON'T ── */
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 2rem;
+  }
+  .do-box, .dont-box {
+    background: var(--paper);
+    padding: 1.5rem;
+  }
+  .do-box h4 { color: #1d7a3a; font-family: var(--display); margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 0.05em; }
+  .dont-box h4 { color: var(--accent); font-family: var(--display); margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 0.05em; }
+  .do-box ul, .dont-box ul { list-style: none; }
+  .do-box li, .dont-box li { font-size: 0.85rem; padding: 0.3rem 0; }
+  .do-box li::before { content: '✓ '; color: #1d7a3a; font-weight: bold; }
+  .dont-box li::before { content: '✗ '; color: var(--accent); font-weight: bold; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 2px solid var(--ink);
+    margin-top: 5rem;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* print */
+  @media print {
+    nav { display: none; }
+    .copy-btn { display: none; }
+  }
+  @media (max-width: 600px) {
+    header { padding: 2rem 1.25rem 1.5rem; }
+    main { padding: 0 1.25rem 4rem; }
+    .do-dont { grid-template-columns: 1fr; }
+    .tl-row { grid-template-columns: 1fr; }
+    .tl-day { text-align: left; }
+    footer { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-meta">Career Strategy Document · March 2026 · Bengaluru, India</div>
+  <h1>Sanidhya Kalta<br><span>2026 Placement Playbook</span></h1>
+  <p class="header-sub">A precision outreach plan for SWE &amp; AI/ML internship and fresher roles — built around your actual profile.</p>
+</header>
+
+<nav>
+  <a href="#profile">Profile</a>
+  <a href="#companies">Companies</a>
+  <a href="#emails">Email Templates</a>
+  <a href="#strategy">Strategy</a>
+  <a href="#timeline">Follow-up</a>
+  <a href="#dodont">Mindset</a>
+</nav>
+
+<main>
+
+  <!-- ── PROFILE BRIEF ── -->
+  <section id="profile">
+    <span class="section-label">01 / Your Unfair Advantages</span>
+    <h2>What You're Selling</h2>
+    <p class="section-intro">Before anything else, know your pitch. These are the facts that make recruiters stop scrolling.</p>
+
+    <div class="resume-grid">
+      <div class="resume-cell">
+        <div class="label">Strongest Proof Point</div>
+        <div class="value">94% CNN accuracy on fraud detection</div>
+      </div>
+      <div class="resume-cell">
+        <div class="label">Real Measurable Impact</div>
+        <div class="value">-25% emergency latency · -40% KYC time · -15% defect rate</div>
+      </div>
+      <div class="resume-cell">
+        <div class="label">Intern Experience</div>
+        <div class="value">Sato Argox India · Production SWE · 2025</div>
+      </div>
+      <div class="resume-cell">
+        <div class="label">Academic Standing</div>
+        <div class="value">CGPA 7.92 / 10 · 3rd Year · CMRIT Bengaluru</div>
+      </div>
+      <div class="resume-cell">
+        <div class="label">Hot Stack (use these words)</div>
+        <div class="value">
+          <span class="tag hot">YOLOv5</span>
+          <span class="tag hot">OpenCV</span>
+          <span class="tag hot">CNN</span>
+          <span class="tag">Python</span>
+          <span class="tag">React.js</span>
+          <span class="tag">REST API</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">IPFS</span>
+        </div>
+      </div>
+      <div class="resume-cell">
+        <div class="label">Use AI/DS Resume For</div>
+        <div class="value">CV/ML roles, surveillance tech, fintech AI, healthtech</div>
+      </div>
+      <div class="resume-cell">
+        <div class="label">Use SWE Resume For</div>
+        <div class="value">Full-stack, backend, product-engineer, generalist SDE roles</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPANY TABLE ── -->
+  <section id="companies">
+    <span class="section-label">02 / Target Companies</span>
+    <h2>18 Companies — Tiered by Probability</h2>
+    <p class="section-intro">S = Startup (fastest to respond) · M = Mid-size · T = Top Tech</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Company</th>
+            <th>Tier</th>
+            <th>Role</th>
+            <th>Why You Fit</th>
+            <th>Apply / Reach</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>01</td>
+            <td>Infilect Technologies</td>
+            <td><span class="tier tier-s">Startup</span></td>
+            <td><span class="pill">AI Intern</span></td>
+            <td>Computer vision + retail analytics — your YOLOv5 pipeline is a direct fit</td>
+            <td><a href="https://infilect.com/careers" class="apply-link">infilect.com/careers</a><br><span class="outreach-note">LinkedIn: DM CTO or AI Lead</span></td>
+          </tr>
+
+          <tr>
+            <td>02</td>
+            <td>Discover Dollar</td>
+            <td><span class="tier tier-s">Startup</span></td>
+            <td><span class="pill">Analytics/AI Intern</span></td>
+            <td>Python + Power BI + ML — matches their listed intern skills exactly</td>
+            <td><a href="https://www.discoverdollar.com/careers" class="apply-link">discoverdollar.com/careers</a><br><span class="outreach-note">LinkedIn: Search "Discover Dollar Recruiter"</span></td>
+          </tr>
+
+          <tr>
+            <td>03</td>
+            <td>AryaXAI</td>
+            <td><span class="tier tier-s">Startup</span></td>
+            <td><span class="pill">AI Research Intern</span></td>
+            <td>Explainable AI focus — your CNN transparency work in ChainKYC is relevant</td>
+            <td><a href="https://aryaxai.com/careers" class="apply-link">aryaxai.com/careers</a><br><span class="outreach-note">Email: careers@aryaxai.com</span></td>
+          </tr>
+
+          <tr>
+            <td>04</td>
+            <td>Aereo</td>
+            <td><span class="tier tier-s">Startup</span></td>
+            <td><span class="pill">AI Engineering Intern</span></td>
+            <td>Drone + geospatial vision — your real-time CV pipeline is transferable</td>
+            <td><a href="https://aereo.in/careers" class="apply-link">aereo.in/careers</a><br><span class="outreach-note">LinkedIn cold DM to founder</span></td>
+          </tr>
+
+          <tr>
+            <td>05</td>
+            <td>Leegality</td>
+            <td><span class="tier tier-s">Startup</span></td>
+            <td><span class="pill">SDE Intern</span></td>
+            <td>Document tech — your OCR + document CNN work from ChainKYC is a perfect story</td>
+            <td><a href="https://leegality.com/careers" class="apply-link">leegality.com/careers</a><br><span class="outreach-note">LinkedIn: HR team visible, DM directly</span></td>
+          </tr>
+
+          <tr>
+            <td>06</td>
+            <td>Certa (YC-backed)</td>
+            <td><span class="tier tier-s">Startup</span></td>
+            <td><span class="pill">SDE / ML Intern</span></td>
+            <td>KYC/compliance automation — ChainKYC is almost literally their product</td>
+            <td><a href="https://www.certa.ai/careers" class="apply-link">certa.ai/careers</a><br><span class="outreach-note">Cold email: [name]@certa.ai</span></td>
+          </tr>
+
+          <tr>
+            <td>07</td>
+            <td>Sarvam AI</td>
+            <td><span class="tier tier-s">Startup</span></td>
+            <td><span class="pill">ML Intern</span></td>
+            <td>Indian AI infra startup — strong Python + model training background fits</td>
+            <td><a href="https://www.sarvam.ai/careers" class="apply-link">sarvam.ai/careers</a><br><span class="outreach-note">Apply via site; DM team on LinkedIn</span></td>
+          </tr>
+
+          <tr>
+            <td>08</td>
+            <td>Hivel</td>
+            <td><span class="tier tier-s">Startup</span></td>
+            <td><span class="pill">SDE Intern</span></td>
+            <td>Engineering intelligence platform — your test coverage + refactor experience from Sato Argox is a fit</td>
+            <td><a href="https://wellfound.com/company/hivel" class="apply-link">wellfound.com/hivel</a><br><span class="outreach-note">Wellfound direct message to hiring manager</span></td>
+          </tr>
+
+          <tr>
+            <td>09</td>
+            <td>Kore.ai</td>
+            <td><span class="tier tier-m">Mid-size</span></td>
+            <td><span class="pill">SDE / AI Intern</span></td>
+            <td>Conversational AI — Python, REST APIs, ML background all relevant</td>
+            <td><a href="https://kore.ai/company/careers/" class="apply-link">kore.ai/careers</a><br><span class="outreach-note">LinkedIn TA team + email careers@kore.ai</span></td>
+          </tr>
+
+          <tr>
+            <td>10</td>
+            <td>Techolution</td>
+            <td><span class="tier tier-m">Mid-size</span></td>
+            <td><span class="pill">AI Intern</span></td>
+            <td>Actively hiring ML interns — edge AI is their core, YOLOv5 on commodity HW fits their case studies</td>
+            <td><a href="https://techolution.com/careers/" class="apply-link">techolution.com/careers</a><br><span class="outreach-note">LinkedIn HR search + apply portal</span></td>
+          </tr>
+
+          <tr>
+            <td>11</td>
+            <td>Automation Anywhere</td>
+            <td><span class="tier tier-m">Mid-size</span></td>
+            <td><span class="pill">SDE Intern</span></td>
+            <td>RPA + Python — Selenium + scripting skills + your software intern experience</td>
+            <td><a href="https://www.automationanywhere.com/company/careers" class="apply-link">automationanywhere.com/careers</a><br><span class="outreach-note">University recruiting portal (Bengaluru office)</span></td>
+          </tr>
+
+          <tr>
+            <td>12</td>
+            <td>Licious</td>
+            <td><span class="tier tier-m">Mid-size</span></td>
+            <td><span class="pill">SDE-1 (Backend)</span></td>
+            <td>Product-first startup in BLR — Node.js + Django backend experience aligns</td>
+            <td><a href="https://internshala.com" class="apply-link">internshala.com (search Licious)</a><br><span class="outreach-note">LinkedIn: Licious Engineering team</span></td>
+          </tr>
+
+          <tr>
+            <td>13</td>
+            <td>Seagate Technology (India)</td>
+            <td><span class="tier tier-m">Mid-size</span></td>
+            <td><span class="pill">ML Intern</span></td>
+            <td>Actively hiring ML interns; data + Python heavy role</td>
+            <td><a href="https://www.seagate.com/contacts/careers/" class="apply-link">seagate.com/careers</a><br><span class="outreach-note">LinkedIn: Search "Seagate Intern Recruiter India"</span></td>
+          </tr>
+
+          <tr>
+            <td>14</td>
+            <td>Cisco Systems (India)</td>
+            <td><span class="tier tier-t">Top Tech</span></td>
+            <td><span class="pill">ML Intern</span></td>
+            <td>Listed image processing + CV intern roles — your SentinelAI is a show-stopper</td>
+            <td><a href="https://jobs.cisco.com" class="apply-link">jobs.cisco.com</a><br><span class="outreach-note">Apply + LinkedIn TA team "Cisco India University"</span></td>
+          </tr>
+
+          <tr>
+            <td>15</td>
+            <td>Salesforce (Hyderabad/BLR)</td>
+            <td><span class="tier tier-t">Top Tech</span></td>
+            <td><span class="pill">SWE Intern (Futureforce)</span></td>
+            <td>Futureforce program for 2027 grads — React + Node + REST APIs is their stack</td>
+            <td><a href="https://salesforce.com/company/careers/university-recruiting/" class="apply-link">salesforce.com/futureforce</a><br><span class="outreach-note">Apply via portal; referral through LinkedIn alumni</span></td>
+          </tr>
+
+          <tr>
+            <td>16</td>
+            <td>Honeywell (BLR)</td>
+            <td><span class="tier tier-t">Top Tech</span></td>
+            <td><span class="pill">AI Intern (Bachelors)</span></td>
+            <td>Off-campus drive active now for AI bachelor interns</td>
+            <td><a href="https://careers.honeywell.com" class="apply-link">careers.honeywell.com</a><br><span class="outreach-note">Apply portal (search "AI Intern India 2026")</span></td>
+          </tr>
+
+          <tr>
+            <td>17</td>
+            <td>IBM India (Bengaluru)</td>
+            <td><span class="tier tier-t">Top Tech</span></td>
+            <td><span class="pill">Data/AI Intern</span></td>
+            <td>Active fresher AI hiring; IBM Watson + Python is the stack</td>
+            <td><a href="https://www.ibm.com/employment/in/" class="apply-link">ibm.com/employment/in</a><br><span class="outreach-note">LinkedIn: "IBM Campus Recruit India"</span></td>
+          </tr>
+
+          <tr>
+            <td>18</td>
+            <td>Analytics Vidhya</td>
+            <td><span class="tier tier-m">Mid-size</span></td>
+            <td><span class="pill">Generative AI Intern</span></td>
+            <td>Community-first AI platform; Python + content + ML = trifecta</td>
+            <td><a href="https://www.analyticsvidhya.com/jobs/" class="apply-link">analyticsvidhya.com/jobs</a><br><span class="outreach-note">Email from their job board listing</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── EMAIL TEMPLATES ── -->
+  <section id="emails">
+    <span class="section-label">03 / Cold Email Templates</span>
+    <h2>3 Email Templates — Copy &amp; Personalise</h2>
+    <p class="section-intro">Each template has a different reader, a different hook, and a different ask. Fill in <span class="highlight">[brackets]</span> before sending.</p>
+
+    <!-- Template 1: HR -->
+    <div class="email-card">
+      <div class="email-header">
+        <span class="email-type-badge">Template A</span>
+        <span class="email-header-title">To HR / Talent Acquisition</span>
+      </div>
+      <div class="email-field">
+        <span class="email-field-label">To</span>
+        <span class="email-field-value">[HR Name, e.g., Priya S.] &lt;[hr@company.com]&gt;</span>
+      </div>
+      <div class="email-field">
+        <span class="email-field-label">Subject</span>
+        <span class="email-field-value">SDE / AI Intern Application — 3rd yr CS student, 94% CNN accuracy, 1 production internship</span>
+      </div>
+      <div class="email-body">
+        Hi [First Name],<br><br>
+        
+        My name is Sanidhya Kalta — I'm a 3rd-year Computer Science &amp; Data Science student at CMRIT Bengaluru (graduating 2027) and I came across [Company Name]'s work on [specific thing — their product/a blog post/a recent news item]. I'm reaching out about any SDE or AI-related intern opportunities that might be opening up.<br><br>
+
+        A quick snapshot of what I bring:<br>
+        — Built <strong>SentinelAI</strong>: a real-time YOLOv5 + OpenCV threat-detection pipeline running at 24 FPS, cutting emergency alert latency by 25%.<br>
+        — Built <strong>ChainKYC</strong>: trained a custom CNN to 94% fraud-detection accuracy, cutting manual KYC time by 40%.<br>
+        — Production intern at <strong>Sato Argox India</strong> (Oct–Nov 2025): shipped 2 features ahead of schedule, reduced defect rate by 15%.<br><br>
+
+        My stack: Python · YOLOv5 · OpenCV · React.js · Node.js · Django · MySQL · MongoDB<br><br>
+
+        I've attached my resume tailored for this role. Happy to do a quick intro call at a time that works for your team — I'm flexible.<br><br>
+
+        Thank you for your time!<br><br>
+        Sanidhya Kalta<br>
+        +91 8894184955 | Sanidhyakalta@gmail.com<br>
+        github.com/sanidhyakalta18 | linkedin.com/in/sanidhya-kalta-7838b02a9
+      </div>
+    </div>
+
+    <!-- Template 2: Hiring Manager -->
+    <div class="email-card">
+      <div class="email-header">
+        <span class="email-type-badge">Template B</span>
+        <span class="email-header-title">To Hiring Manager / Engineering Lead</span>
+      </div>
+      <div class="email-field">
+        <span class="email-field-label">To</span>
+        <span class="email-field-value">[Manager Name] &lt;[email]&gt;</span>
+      </div>
+      <div class="email-field">
+        <span class="email-field-label">Subject</span>
+        <span class="email-field-value">Re: [Company Name]'s [specific product/challenge] — a 3rd-yr CV/ML student who's built something similar</span>
+      </div>
+      <div class="email-body">
+        Hi [Name],<br><br>
+
+        I saw [Company Name]'s [recent launch / blog post / LinkedIn post about X] — [one specific, genuine observation about it, e.g., "the approach you're taking with edge inference is exactly the problem I ran into building SentinelAI"].<br><br>
+
+        I'm Sanidhya, a 3rd-year CS student at CMRIT Bengaluru. I've been building in the same space: I engineered a <strong>real-time threat-detection pipeline</strong> using YOLOv5 + OpenCV that classifies weapons, fire, and suspicious behaviour at <strong>24 FPS on standard hardware</strong> with a sub-2% false-positive rate. I also trained an <strong>Inception CNN for fraud-document detection at 94% accuracy</strong> — deployed end-to-end with IPFS storage and Twilio OTP auth.<br><br>
+
+        I have a production internship under my belt (Sato Argox, 2025), so I know what it means to write code that others depend on.<br><br>
+
+        I'm looking for an intern or fresher role where I can contribute to a real ML/CV system — not just run notebooks. If there's any open bandwidth on your team, I'd love 20 minutes to show you what I've built.<br><br>
+
+        Attached: resume (AI/ML focus). GitHub has both projects with READMEs and demo videos.<br><br>
+
+        Thanks a lot,<br>
+        Sanidhya Kalta<br>
+        +91 8894184955 | github.com/sanidhyakalta18
+      </div>
+    </div>
+
+    <!-- Template 3: Startup Founder -->
+    <div class="email-card">
+      <div class="email-header">
+        <span class="email-type-badge">Template C</span>
+        <span class="email-header-title">To Startup Founder</span>
+      </div>
+      <div class="email-field">
+        <span class="email-field-label">To</span>
+        <span class="email-field-value">[Founder Name] &lt;[founder@startup.com]&gt;</span>
+      </div>
+      <div class="email-field">
+        <span class="email-field-label">Subject</span>
+        <span class="email-field-value">A student who built [something relevant] wants to help — no cost to try</span>
+      </div>
+      <div class="email-body">
+        Hi [Name],<br><br>
+
+        I've been following [Startup Name] since [something genuine — a tweet, a TechCrunch mention, a product they shipped]. What you're doing with [specific problem] is genuinely interesting — and I think I can help.<br><br>
+
+        I'm Sanidhya, a 3rd-year CS student from CMRIT Bengaluru. I build things. Specifically:<br>
+        — A <strong>real-time surveillance system</strong> (YOLOv5 + OpenCV + Telegram Bot) that alerts within 1.2 seconds of detecting a threat — deployed and tested across 200+ scenarios.<br>
+        — A <strong>document fraud detector</strong> that uses a custom CNN + OCR pipeline — 94% accuracy, processing 500+ identities with zero data-exposure incidents.<br>
+        — A production internship where I shipped actual features ahead of schedule.<br><br>
+
+        I'm not looking for a big salary. I want to work on a real problem with people who care deeply about what they're building. Even a 2-month part-time engagement would be meaningful.<br><br>
+
+        Would a 15-minute call make sense? I can walk you through what I've built — and if there's no fit, no hard feelings.<br><br>
+
+        Sanidhya<br>
+        +91 8894184955 | Sanidhyakalta@gmail.com | github.com/sanidhyakalta18
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRATEGY ── -->
+  <section id="strategy">
+    <span class="section-label">04 / Outreach Strategy</span>
+    <h2>The Daily Execution Plan</h2>
+    <p class="section-intro">Consistency beats intensity. 5 targeted emails beat 50 copy-paste blasts every time.</p>
+
+    <div class="strategy-grid">
+
+      <div class="strategy-card">
+        <div class="strategy-card-num">01</div>
+        <h3>Daily Email Volume</h3>
+        <ul>
+          <li><span class="li-icon">→</span> Send <strong>3–5 cold emails per day</strong> — no more. Quality cap is essential.</li>
+          <li><span class="li-icon">→</span> Research each company for 10 min before writing. Find one real hook.</li>
+          <li><span class="li-icon">→</span> Monday–Friday only. Emails sent Tue–Thu 9–11 AM get highest open rates.</li>
+          <li><span class="li-icon">→</span> Keep a spreadsheet: Company | Contact | Email sent | Follow-up date | Status</li>
+        </ul>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strategy-card-num">02</div>
+        <h3>LinkedIn Strategy</h3>
+        <ul>
+          <li><span class="li-icon">→</span> <strong>Optimize profile first</strong>: headline = "AI/ML + SWE | CMRIT '27 | YOLOv5 · CNN · React"</li>
+          <li><span class="li-icon">→</span> Send <strong>5–7 LinkedIn connection requests per day</strong> to engineers, CTOs, TAs at target companies</li>
+          <li><span class="li-icon">→</span> After connecting, wait 2 days then send a short DM (max 3 lines + ask)</li>
+          <li><span class="li-icon">→</span> Post 1× per week: a breakdown of your project, a lesson learnt, a problem you solved</li>
+          <li><span class="li-icon">→</span> Comment meaningfully on posts by people at target companies — visibility is free</li>
+        </ul>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strategy-card-num">03</div>
+        <h3>Platform Applications</h3>
+        <ul>
+          <li><span class="li-icon">→</span> <strong>Internshala</strong>: apply to 3–5 listings every morning (set alerts for Python + ML + BLR)</li>
+          <li><span class="li-icon">→</span> <strong>Wellfound (AngelList)</strong>: best for startup roles; message hiring managers directly after applying</li>
+          <li><span class="li-icon">→</span> <strong>Naukri.com</strong>: keep profile updated with all keywords — recruiters search it daily</li>
+          <li><span class="li-icon">→</span> <strong>Unstop</strong>: hackathons + hiring challenges — winning one changes your trajectory</li>
+          <li><span class="li-icon">→</span> <strong>GitHub</strong>: pin both projects, add GIFs/demo screenshots to READMEs — this is your portfolio</li>
+        </ul>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strategy-card-num">04</div>
+        <h3>Resume Matching</h3>
+        <ul>
+          <li><span class="li-icon">→</span> <strong>AI/DS Resume</strong> → CV roles, ML intern, AI researcher, surveillance tech, KYC/fintech AI</li>
+          <li><span class="li-icon">→</span> <strong>SWE Resume</strong> → Full-stack intern, product SDE, backend engineer, generalist startup engineer</li>
+          <li><span class="li-icon">→</span> Read the JD carefully — match 3–4 keywords from it into your email naturally</li>
+          <li><span class="li-icon">→</span> Never send the PDF resume version to startups — send the clean DOCX or a link</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOLLOW-UP TIMELINE ── -->
+  <section id="timeline">
+    <span class="section-label">05 / Follow-up Timeline</span>
+    <h2>When to Follow Up — Exactly</h2>
+    <p class="section-intro">Most placements happen on the 2nd or 3rd touchpoint. Never ghost your own outreach.</p>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">Day 0</div>
+        <div class="tl-content"><b>Send the cold email.</b> Attach the correct resume. Double-check name spelling. Send Tue–Thu, 9–11 AM.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">Day 1</div>
+        <div class="tl-content"><b>Connect on LinkedIn</b> with the same person (or HR) — friendly note: "Hi, I sent you an email yesterday about the [role]. Just connecting here too."</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">Day 5–6</div>
+        <div class="tl-content"><b>First follow-up email.</b> Keep it under 4 lines. "Hi [Name], just bumping this up. Happy to share my project demo or hop on a quick call. Thanks!"</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">Day 12</div>
+        <div class="tl-content"><b>Final follow-up.</b> Try a different angle — lead with a project update, a new metric, or something relevant to their company news. One line offer: "If timing isn't right, happy to reconnect in [Month]."</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">Day 14+</div>
+        <div class="tl-content"><b>Archive and move on.</b> Mark in your tracker. Do not follow up a 4th time. Re-approach in 2–3 months if the company is still a priority.</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">LinkedIn DM</div>
+        <div class="tl-content"><b>3-line formula:</b> 1) One genuine observation about them/their work. 2) One sentence on who you are + strongest proof point. 3) A specific, easy ask ("Would a 15-min call make sense?" not "Please give me a job").</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DO / DON'T ── -->
+  <section id="dodont">
+    <span class="section-label">06 / Mindset Rules</span>
+    <h2>What Separates Placed from Passed Over</h2>
+    <p class="section-intro">The technical bar is the minimum. These habits decide the outcome.</p>
+
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✦ DO THESE</h4>
+        <ul>
+          <li>Mention a <em>specific</em> number in every email (94%, 40%, 25ms)</li>
+          <li>Personalise the first line — show you've done 10 minutes of research</li>
+          <li>Include your GitHub link — let the code speak</li>
+          <li>Follow up exactly on schedule — persistence signals seriousness</li>
+          <li>Keep your LinkedIn "Open to Work" visible to recruiters only</li>
+          <li>Post your project breakdowns on LinkedIn — organic inbound happens</li>
+          <li>Apply to 3 companies in the same sector the same week (warm memory effect)</li>
+          <li>Track every outreach in a spreadsheet — you're running a pipeline</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✦ AVOID THESE</h4>
+        <ul>
+          <li>Don't send generic "I am interested in opportunities" emails</li>
+          <li>Don't attach a 3-page resume — 1 page, tailored, every time</li>
+          <li>Don't apply to FAANG as your first priority — fix rate is near 0 for freshers cold-applying</li>
+          <li>Don't copy-paste the same email to 20 companies in one day</li>
+          <li>Don't mention CGPA unless it's above 8.5 or they specifically ask</li>
+          <li>Don't write "I am a quick learner" — show it through project metrics instead</li>
+          <li>Don't follow up more than 3 times — it turns from persistence to pestering</li>
+          <li>Don't ignore Wellfound/Unstop — they're where startups actually hire from</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Sanidhya Kalta · Placement Playbook · 2026</span>
+  <span>Generated March 2026 · For personal use</span>
+  <span>Update tracker weekly · Review strategy monthly</span>
+</footer>
+
+<script>
+  // Copy buttons
+  document.querySelectorAll('.email-body').forEach((body, i) => {
+    const card = body.closest('.email-card');
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.onclick = () => {
+      navigator.clipboard.writeText(body.innerText).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      });
+    };
+    card.style.position = 'relative';
+    card.appendChild(btn);
+  });
+</script>
+</body>
+</html>
